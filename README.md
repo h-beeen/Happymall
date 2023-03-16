@@ -1,12 +1,9 @@
-<center>
-<h1>HappyMall Backend Study</h1>
-Web Application Development Using Spring Boot & JPA
+<h1 align=center>HappyMall Backend Study</h1>
+<p align=center>Web Application Development Using Spring Boot & JPA</p>
 <br/></br>
-<img src="https://user-images.githubusercontent.com/112257466/225543902-7899dc57-6a93-4cb3-9b25-9cf3f05db17a.png"/></br>
+<img align=center src="https://user-images.githubusercontent.com/112257466/225543902-7899dc57-6a93-4cb3-9b25-9cf3f05db17a.png"/></br>
 
-</center>
-
-## API 구조 (수정 예정))
+## API 구조 (수정 예정)
 - 회원 도메인 개발
   - 회원 Repository
   - 회원 서비스
