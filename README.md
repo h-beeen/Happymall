@@ -1,5 +1,6 @@
 <h1 align=center>HappyMall Backend Study</h1>
-<p align=center>Web Application Development Using Spring Boot & JPA</p>
+<p align=center>Web Application Development Using Spring Boot & JPA</br>
+Inflearn '스프링 부트와 JPA 활용 실습자료' Repository</p>
 <br/></br>
 <img align=center src="https://user-images.githubusercontent.com/112257466/225543902-7899dc57-6a93-4cb3-9b25-9cf3f05db17a.png"/></br>
 
@@ -21,3 +22,14 @@
   - 변경감지와 병합
   - 상품주문
   - 주문목록 검색, 취소
+
+## 개발환경
+- Project : Gradle Project(Java / JDK17)
+- Spring Framework : 6.0.6
+- Spring Boot version : 3.0.4
+- SpringBoot Starter
+  - Web (WEB)
+  - DataJPA (SQL)
+  - Lombok (DEV. Tools)
+  - Thymeleaf 3.1.1 Release (Template Engines)
+  - H2 Database (SQL)
