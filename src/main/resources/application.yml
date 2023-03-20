@@ -1,23 +1,25 @@
 spring:
+  profiles:
+    default: dev
   datasource:
-    url: jdbc:mysql://localhost:3306/jpashop?useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/jpashop?user=hbyeon
     username: hbyeon
     password: 1q2w3e4r!
     driver-class-name: com.mysql.cj.jdbc.Driver
+
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: validate
     properties:
       hibernate:
         format_sql: true
-        jdbc.batch_size: 100
-        show_sql: false
-  main:
-    banner-mode: "off"
+        defualt_batch_fetch_size: 100
+
 logging:
   level:
-    org.hibernate.SQL: info
-    org.hibernate.type.descriptor.sql.BasicBinder: trace
-  pattern:
-    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} %highlight(%-5level) [%15.15t] %cyan(%-40.40logger{1.}) : %msg%n%throwable"
+    org.hibernate.SQL: debug
 
+decorator:
+  datasource:
+    p6spy:
+      enable-logging: true
