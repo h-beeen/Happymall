@@ -9,8 +9,8 @@ Inflearn '스프링 부트와 JPA 활용 실습자료' Repository</p>
 - <img src="https://user-images.githubusercontent.com/112257466/209075018-0a1f7f14-a910-4d16-a4e4-51929b99e1ae.png" width=15px/>&nbsp;&nbsp;Spring Framework : 6.0.6
 - <img src="https://user-images.githubusercontent.com/112257466/209075280-78be8487-7d6a-485c-92a8-d6677f0caab9.png" width=15px/>&nbsp;&nbsp;Spring Boot version : 3.0.4
 - <img src="https://user-images.githubusercontent.com/112257466/209075280-78be8487-7d6a-485c-92a8-d6677f0caab9.png" width=15px/>&nbsp;&nbsp;Spring Boot Starter
-  - Web 
-  - MySQL 
+  - Web
+  - MySQL
   - Lombok
   - DataJPA
   - Thymeleaf
