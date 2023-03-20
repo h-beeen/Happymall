@@ -24,6 +24,7 @@ dependencies {
 	implementation 'mysql:mysql-connector-java:8.0.32'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-devtools'
+	implementation 'p6spy:p6spy:3.9.1'
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'p6spy:p6spy:3.9.1'
 	annotationProcessor 'org.projectlombok:lombok'
