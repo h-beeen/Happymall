@@ -1,3 +1,6 @@
+#  mysql -u hbyeon -p -D jpashop
+#  pw : 1q2w3e4r!
+
 spring:
   profiles:
     default: dev
@@ -17,7 +20,7 @@ spring:
 
 logging:
   level:
-    org.hibernate.SQL: debug
+    org.hibernate.SQL: trace
 
 decorator:
   datasource:
