@@ -1,6 +1,3 @@
-#  mysql -u hbyeon -p -D jpashop
-#  pw : 1q2w3e4r!
-
 spring:
   profiles:
     default: dev
@@ -12,17 +9,17 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: validate
+      ddl-auto: create
     properties:
       hibernate:
-        format_sql: true
         defualt_batch_fetch_size: 100
 
 logging:
   level:
-    org.hibernate.SQL: trace
+    org.hibernate.SQL: off
 
 decorator:
   datasource:
     p6spy:
       enable-logging: true
+      logfile: spy.log
