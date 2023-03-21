@@ -7,8 +7,10 @@ import lombok.Setter;
 import java.util.ArrayList;
 import java.util.List;
 
+import static jakarta.persistence.InheritanceType.SINGLE_TABLE;
+
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@Inheritance(strategy = SINGLE_TABLE)
 @DiscriminatorColumn(name = "dtype")
 @Getter @Setter
 public abstract class Item {
@@ -17,6 +19,7 @@ public abstract class Item {
     @GeneratedValue
     @Column(name = "item_id")
     private Long id;
+
 
     private String name;
     private int price;
