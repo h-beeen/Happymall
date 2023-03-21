@@ -1,6 +1,4 @@
 spring:
-  profiles:
-    default: dev
   datasource:
     url: jdbc:mysql://localhost:3306/jpashop?user=hbyeon
     username: hbyeon
@@ -9,17 +7,13 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: create-drop
     properties:
       hibernate:
         defualt_batch_fetch_size: 100
-
-logging:
-  level:
-    org.hibernate.SQL: off
+        format_sql: true
 
 decorator:
   datasource:
     p6spy:
       enable-logging: true
-      logfile: spy.log
