@@ -22,6 +22,8 @@ Inflearn '스프링 부트와 JPA 활용 실습자료' Repository</p>
  - [2023. 03. 20] DB 변경
     -  <img src="https://user-images.githubusercontent.com/112257466/226243880-d89280ef-75a5-4bcc-a3a9-47692fd53e3b.svg" width=15px/>&nbsp;&nbsp;H2 Database ⇨ 
       <img src="https://user-images.githubusercontent.com/112257466/226245108-ee0fb2aa-49e1-4b45-969d-c646abee8ea2.svg" width=15px/>&nbsp;MySQL [DB 편의성 개선]
+    - [2023. 03. 25] Test Unit 변경
+      - JUnit4 ⇨ JUnit5
 </br>
 
 ## 🍀 개발 현황
