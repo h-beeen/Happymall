@@ -30,6 +30,7 @@ dependencies {
 	runtimeOnly 'p6spy:p6spy:3.9.1'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework:spring-test'
 }
 
 tasks.named('test') {
