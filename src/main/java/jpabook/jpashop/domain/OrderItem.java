@@ -26,4 +26,14 @@ public class OrderItem {
 
     private int orderPrice; // 주문 가격
     private int count; // 주문 수량
+
+    //== Business Logic ==//
+    public void cancel() {
+        getItem().addStock(count);
+    }
+
+    //== Find Logic ==//
+    public int getTotalPrice() {
+        return getOrderPrice() * getCount();
+    }
 }
