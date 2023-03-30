@@ -3,12 +3,15 @@ package jpabook.jpashop.domain;
 import jakarta.persistence.*;
 import jpabook.jpashop.domain.item.Item;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import static jakarta.persistence.FetchType.LAZY;
+import static lombok.AccessLevel.PROTECTED;
 
 @Entity
 @Table(name = "order_item")
+@NoArgsConstructor(access = PROTECTED)
 @Getter @Setter
 public class OrderItem {
 
@@ -26,6 +29,17 @@ public class OrderItem {
 
     private int orderPrice; // 주문 가격
     private int count; // 주문 수량
+
+    //== 생성 메서드==//
+    public static OrderItem createOrderItem(Item item, int orderPrice, int count) {
+        OrderItem orderItem = new OrderItem();
+        orderItem.setItem(item);
+        orderItem.setOrderPrice(orderPrice);
+        orderItem.setCount(count);
+
+        item.removeStock(count);
+        return orderItem;
+    }
 
     //== Business Logic ==//
     public void cancel() {
