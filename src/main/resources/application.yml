@@ -1,19 +1,28 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/jpashop?user=hbyeon
+    url: jdbc:mysql://localhost:3306/jpashop
     username: hbyeon
     password: 1q2w3e4r!
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
+
     properties:
+      jakarta:
+        persistence:
+          sharedCache:
+            mode: UNSPECIFIED # Encountered deprecated setting 해결
+
       hibernate:
-        defualt_batch_fetch_size: 100
-        format_sql: true
+        default_batch_fetch_size: 100
+        format_sql: true # ddl을 이쁘게 하려고 킴
+
+    open-in-view: false
 
 decorator:
   datasource:
     p6spy:
       enable-logging: true
+
