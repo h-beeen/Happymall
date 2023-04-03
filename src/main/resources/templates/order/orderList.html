@@ -5,22 +5,26 @@
 
 <div class="container">
 
-    <div th:replace="fragments/bodyHeader :: bodyHeader"/>
+    <div th:replace="fragments/bodyHeader :: bodyHeader"></div>
 
     <div>
         <div>
             <form th:object="${orderSearch}" class="form-inline">
                 <div class="form-group mb-2">
-                    <input type="text" th:field="*{memberName}" class="form-control" placeholder="회원명"/>
+                    <label>
+                        <input type="text" th:field="*{memberName}" class="form-control" placeholder="회원명"/>
+                    </label>
                 </div>
                 <div class="form-group mx-sm-1 mb-2">
-                    <select th:field="*{orderStatus}" class="form-control">
-                        <option value="">주문상태</option>
-                        <option th:each="status : ${T(jpabook.jpashop.domain.OrderStatus).values()}"
-                                th:value="${status}"
-                                th:text="${status}">option
-                        </option>
-                    </select>
+                    <label>
+                        <select th:field="*{orderStatus}" class="form-control">
+                            <option value="">주문상태</option>
+                            <option th:each="status : ${T(jpabook.jpashop.domain.OrderStatus).values()}"
+                                    th:value="${status}"
+                                    th:text="${status}">option
+                            </option>
+                        </select>
+                    </label>
                 </div>
                 <button type="submit" class="btn btn-primary mb-2">검색</button>
             </form>
@@ -58,7 +62,7 @@
         </table>
     </div>
 
-    <div th:replace="fragments/footer :: footer"/>
+    <div th:replace="fragments/footer :: footer"></div>
 
 </div> <!-- /container -->
 
