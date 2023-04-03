@@ -1,9 +1,6 @@
 package jpabook.jpashop.service;
 
-import jpabook.jpashop.domain.Delivery;
-import jpabook.jpashop.domain.Member;
-import jpabook.jpashop.domain.Order;
-import jpabook.jpashop.domain.OrderItem;
+import jpabook.jpashop.domain.*;
 import jpabook.jpashop.domain.item.Item;
 import jpabook.jpashop.repository.ItemRepository;
 import jpabook.jpashop.repository.MemberRepository;
@@ -28,39 +25,41 @@ public class OrderService {
      */
     @Transactional
     public Long order(Long memberId, Long itemId, int count) {
-        // Find Entity
-        Member member = memberRepository.findOne(memberId);
-        Item item = itemRepository.findOne(memberId);
 
-        // Delivery Information Create
+        //엔티티 조회
+        Member member = memberRepository.findOne(memberId);
+        Item item = itemRepository.findOne(itemId);
+
+        //배송정보 생성
         Delivery delivery = new Delivery();
         delivery.setAddress(member.getAddress());
+        delivery.setStatus(DeliveryStatus.READY);
 
-        // Order Product Create
+        //주문상품 생성
         OrderItem orderItem = OrderItem.createOrderItem(item, item.getPrice(), count);
 
-        // Order Create
+        //주문 생성
         Order order = Order.createOrder(member, delivery, orderItem);
 
-        // Order Save
+        //주문 저장
         orderRepository.save(order);
+
         return order.getId();
     }
-
 
     /**
      * 주문 취소
      */
     @Transactional
-    public void cancelOrder(Long orderId){
-        // 주문 엔티티 조회q
+    public void cancelOrder(Long orderId) {
+        //주문 엔티티 조회
         Order order = orderRepository.findOne(orderId);
-        // 주문 취소
+        //주문 취소
         order.cancel();
     }
 
     //검색
-    public List<Order> findOrders(OrderSearch orderSearch){
-        return orderRepository.findAllByCriteria(orderSearch);
+    public List<Order> findOrders(OrderSearch orderSearch) {
+        return orderRepository.findAllByString(orderSearch);
     }
 }
